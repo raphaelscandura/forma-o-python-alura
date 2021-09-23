@@ -6,6 +6,16 @@ class Conta:
         self.__titular = titular
         self.__saldo = saldo
 
+    def sacar(self, valor):
+        self.saldo -= valor
+    
+    def depositar(self, valor):
+        self.saldo += valor
+    
+    def transferir(self, valor, contaDestino):
+        self.sacar(valor)
+        contaDestino.depositar(valor)
+
     def get_saldo(self):
         return self.__saldo
     
