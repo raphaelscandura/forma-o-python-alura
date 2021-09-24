@@ -14,5 +14,5 @@ class Filme(Programa):
     def duracao(self, duracao):
         self._duracao = duracao
 
-    def imprimir(self):
-        print(f'Nome: {self.nome} - Ano: {self.ano} - Duracao: {self.duracao} minutos - Likes {self.likes}')
+    def __str__(self):
+        return f'Nome: {self.nome} - Ano: {self.ano} - Duracao: {self.duracao} minutos - Likes {self.likes}'

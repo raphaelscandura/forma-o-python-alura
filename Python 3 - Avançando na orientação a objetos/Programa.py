@@ -27,3 +27,6 @@ class Programa:
     @likes.setter
     def likes(self, likes):
         self._likes = likes
+    
+    def __str__(self):
+        return f'Nome: {self.nome} - Ano: {self.ano} - Likes {self.likes}'

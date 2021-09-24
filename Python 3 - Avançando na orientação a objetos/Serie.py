@@ -13,5 +13,5 @@ class Serie(Programa):
     def temporadas(self, temporadas):
         self._temporadas = temporadas
     
-    def imprimir(self):
-        print(f'Nome: {self.nome} - Ano: {self.ano} - Temporadas: {self.temporadas} - Likes {self.likes}')
+    def __str__(self):
+        return f'Nome: {self.nome} - Ano: {self.ano} - Temporadas: {self.temporadas} - Likes {self.likes}'

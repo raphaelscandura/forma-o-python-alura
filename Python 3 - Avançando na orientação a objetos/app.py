@@ -1,10 +1,11 @@
 from Filme import Filme
 from Serie import Serie
 
-filme = Filme("Vingadores", 2017, 1568, 125)
+vingadores = Filme("Vingadores", 2017, 1568, 125)
 
-filme.imprimir()
+bakas = Serie("Sussy Bakas", 2020, 563, 4)
 
-serie = Serie("Sussy Bakas", 2020, 563, 4)
+playlist = [vingadores, bakas]
 
-serie.imprimir()
+for programa in playlist:
+    print(programa)
