@@ -1,19 +1,21 @@
-url = "bytebank.com/cambio?moedaOrigem=real"
-print(url)
+url = "bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
+# Sanitização da URL
+url = url.strip()
 
-index_interrogacao = url.find('?')
+if url != "":
+    indice_interrogacao = url.find('?')
+    url_base = url[:indice_interrogacao]
+    url_parametros = url[indice_interrogacao+1:]
 
-url_base = url[:index_interrogacao]
-print(url_base)
+    parametro_busca = 'moedaOrigem'
+    indice_parametro = url_parametros.find(parametro_busca)
+    indice_valor = indice_parametro + len(parametro_busca) + 1
 
-url_parametros = url[index_interrogacao + 1:]
-print(url_parametros)
-
-print(url)
-
-parametro_origem = 'moedaOrigem'
-indice_primeiro_parametro = url.find(parametro_origem)
-indice_moeda_origem = indice_primeiro_parametro + len(parametro_origem) + 1
-primeiro_parametro = url[indice_moeda_origem:]
-
-print(primeiro_parametro)
+    indice_e_comercial = url_parametros.find('&', indice_valor)
+    if indice_e_comercial == -1:
+        valor = url_parametros[indice_valor:]
+    else:
+        valor = url_parametros[indice_valor:indice_e_comercial]
+    print(valor)
+else:
+    raise ValueError("A URL está vazia!")
