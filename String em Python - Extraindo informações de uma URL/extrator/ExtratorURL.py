@@ -1,6 +1,6 @@
 class ExtratorURL:
     def __init__(self, url):
-        self._url = url.strip()
+        self._url = self.sanitiza_url(url)
         self._validaURL()
     
     @property
@@ -11,8 +11,14 @@ class ExtratorURL:
     def url(self, url):
         self.url = url.strip()
 
+    def sanitiza_url(self, url):
+        if type(url) == str:
+            return url.strip()
+        else:
+            return ""
+    
     def _validaURL(self):
-        if(self._url == "" or self._url == None):
+        if not self.url:
             raise ValueError("A URL está vazia!")
         
     def get_url_base(self):
