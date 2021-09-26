@@ -12,3 +12,11 @@ for conta in lista:
     print(conta)
     conta.taxas_mensais()
     print(f'Conta depois das taxas mensais: {conta}')
+
+conta_3 = ContaPoupanca(24)
+
+print(conta_3 == conta_2)
+
+conta_4 = ContaCorrente(24)
+
+print(conta_3 == conta_4)

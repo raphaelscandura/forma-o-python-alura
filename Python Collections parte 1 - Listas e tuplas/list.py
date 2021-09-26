@@ -17,3 +17,8 @@ print(idades_daqui_dois_anos)
 maiores_de_idade = [(idade) for idade in idades if idade >= 18]
 
 print(maiores_de_idade)
+
+print(list(enumerate(idades)))
+
+for indice, idade in enumerate(idades):
+    print(indice, idade)

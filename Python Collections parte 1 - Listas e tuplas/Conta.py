@@ -14,3 +14,9 @@ class Conta(metaclass = ABCMeta):
     
     def __str__(self):
         return f'Código: {self._codigo} Saldo: {self._saldo}'
+
+    def __eq__(self, outra_conta):
+        if(type(self) == type(outra_conta)):
+            return self._codigo == outra_conta._codigo
+        else:
+            return False
