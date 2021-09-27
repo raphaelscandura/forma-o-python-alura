@@ -1,5 +1,7 @@
+from functools import total_ordering
 from abc import ABCMeta, abstractmethod
 
+@total_ordering
 class Conta(metaclass = ABCMeta):
     def __init__(self, codigo) -> None:
         self._codigo = codigo
@@ -20,3 +22,9 @@ class Conta(metaclass = ABCMeta):
             return self._codigo == outra_conta._codigo
         else:
             return False
+    
+    def __lt__(self, outro):
+        if(self._saldo != outro._saldo):
+            return self._saldo < outro._saldo
+        else:
+            return self._codigo < outro._codigo

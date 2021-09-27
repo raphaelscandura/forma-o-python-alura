@@ -22,3 +22,9 @@ print(list(enumerate(idades)))
 
 for indice, idade in enumerate(idades):
     print(indice, idade)
+
+print(sorted(idades))
+
+print(sorted(idades, reverse = True))
+
+print(list(reversed(sorted(idades))))
