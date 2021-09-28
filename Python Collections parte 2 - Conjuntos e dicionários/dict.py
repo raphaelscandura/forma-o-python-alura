@@ -1,4 +1,5 @@
 from collections import defaultdict
+from typing import Counter
 
 texto = "bom dia senhoras e senhores no dia de hoje teremos bom senhores e boa senhoras"
 print(set(texto.split()))
@@ -27,8 +28,9 @@ print(quantidade_de_aparicoes)
 
 quantidade_de_aparicoes = defaultdict(int)
 
-for palavra in texto.split():
-    aparicoes = quantidade_de_aparicoes[palavra]
-    quantidade_de_aparicoes[palavra] = aparicoes + 1
+# for palavra in texto.split():
+#     aparicoes = quantidade_de_aparicoes[palavra]
+#     quantidade_de_aparicoes[palavra] = aparicoes + 1
 
+quantidade_de_aparicoes = Counter(texto.split())
 print(quantidade_de_aparicoes)
