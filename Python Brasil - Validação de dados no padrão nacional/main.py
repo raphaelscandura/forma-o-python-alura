@@ -1,7 +1,7 @@
-from Cpf_Cnpj import CpfCnpj
+from Documento_Factory import DocumentoFactory
 
-cpf = CpfCnpj("15316264754", "cpf")
+cpf = DocumentoFactory.cria_documento("15316264754")
 print(cpf)
 
-cnpj = CpfCnpj("35379838000112", "cnpj")
+cnpj = DocumentoFactory.cria_documento("35379838000112")
 print(cnpj)
