@@ -1,3 +1,4 @@
+from Endereco import Endereco
 from Documento_Factory import DocumentoFactory
 from Telefone import Telefone
 from Data import Data
@@ -13,3 +14,6 @@ print(telefone)
 
 data_de_cadastro = Data()
 print(data_de_cadastro)
+
+endereco = Endereco("01001000")
+print(endereco)
