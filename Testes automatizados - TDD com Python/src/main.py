@@ -1,7 +1,7 @@
-from src.dominio import Leilao, Lance, Usuario
+from dominio import Leilao, Lance, Usuario
 
-pedro = Usuario("Pedro")
-gabriel = Usuario("Gabriel")
+pedro = Usuario("Pedro", 5000.0)
+gabriel = Usuario("Gabriel", 5000.0)
 
 lance_do_pedro = Lance(pedro, 150.0)
 lance_do_gabriel = Lance(gabriel, 1080.0)
