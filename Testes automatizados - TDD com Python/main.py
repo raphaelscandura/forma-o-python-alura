@@ -1,4 +1,4 @@
-from dominio import Avaliador, Leilao, Lance, Usuario
+from dominio import Leilao, Lance, Usuario
 
 pedro = Usuario("Pedro")
 gabriel = Usuario("Gabriel")
@@ -13,6 +13,4 @@ leilao.adicionar_lance(lance_do_gabriel)
 
 leilao.imprimir_todos_os_lances()
 
-avaliador = Avaliador()
-avaliador.avalia(leilao)
-avaliador.imprimir_maior_e_menor_lances()
+leilao.imprimir_maior_e_menor_lances()
