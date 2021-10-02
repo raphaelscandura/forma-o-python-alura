@@ -1,5 +1,5 @@
 from unittest import TestCase
-from dominio import Usuario,Lance, Leilao
+from src.dominio import Usuario,Lance, Leilao
 
 # Regras de negócio:
 # 1 - Um usuário só pode dar um lance se ele for maior do que o lance anterior
@@ -9,6 +9,7 @@ from dominio import Usuario,Lance, Leilao
 class TestLeilao(TestCase):
 
     def setUp(self):
+
         self.pedro = Usuario("Pedro")
         self.gabriel = Usuario("Gabriel")
 
@@ -16,6 +17,15 @@ class TestLeilao(TestCase):
         self.lance_do_pedro = Lance(self.pedro, 150.0)        
 
         self.leilao = Leilao("Televisão")
+    
+    def test_nao_deve_permitir_que_um_lance_seja_dado_com_valor_menor_do_que_o_lance_anteriro(self):
+        with self.assertRaises(ValueError):
+            lola = Usuario("Lola")
+            lance_da_lola = Lance(lola, 1.0)
+            
+            self.leilao.adicionar_lance(self.lance_do_gabriel)
+            self.leilao.adicionar_lance(lance_da_lola)
+
     
     def test_deve_permitir_um_usuario_dar_o_primeiro_lance(self):
         self.leilao.adicionar_lance(self.lance_do_gabriel)

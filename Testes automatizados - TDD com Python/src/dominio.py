@@ -30,14 +30,14 @@ class Leilao:
         return self.__lances[:]
     
     def adicionar_lance(self, lance):
-        if not self.__lances or self.__lances[-1].usuario != lance.usuario:
+        if not self.__lances or self.__lances[-1].usuario != lance.usuario and lance.valor > self.lances[-1].valor:
             if(self.maior_lance < lance.valor):
                 self.maior_lance = lance.valor
             if(self.menor_lance > lance.valor):
                 self.menor_lance = lance.valor
             self.__lances.append(lance)
         else:
-            raise ValueError("O mesmo usuário não pode dar dois lances seguidos")
+            raise ValueError("Erro: Lance inválido")
 
     def imprimir_todos_os_lances(self):
         for lance in self.__lances:
