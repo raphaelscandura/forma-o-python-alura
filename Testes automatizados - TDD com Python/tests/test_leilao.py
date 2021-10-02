@@ -10,8 +10,8 @@ class TestLeilao(TestCase):
 
     def setUp(self):
 
-        self.pedro = Usuario("Pedro")
-        self.gabriel = Usuario("Gabriel")
+        self.pedro = Usuario("Pedro", 200.0)
+        self.gabriel = Usuario("Gabriel", 200.0)
 
         self.lance_do_gabriel = Lance(self.gabriel, 100.0)
         self.lance_do_pedro = Lance(self.pedro, 150.0)        
@@ -20,7 +20,7 @@ class TestLeilao(TestCase):
     
     def test_nao_deve_permitir_que_um_lance_seja_dado_com_valor_menor_do_que_o_lance_anteriro(self):
         with self.assertRaises(ValueError):
-            lola = Usuario("Lola")
+            lola = Usuario("Lola", 200.0)
             lance_da_lola = Lance(lola, 1.0)
             
             self.leilao.adicionar_lance(self.lance_do_gabriel)
@@ -60,7 +60,7 @@ class TestLeilao(TestCase):
         self.assertEqual(valor_lance_esperado, self.leilao.maior_lance)
     
     def test_retorna_o_menor_e_o_maior_lance_para_mais_de_dois_lances(self):
-        lola = Usuario("Lola")
+        lola = Usuario("Lola", 200.0)
         lance_da_lola = Lance(lola, 20.0)
         self.leilao.adicionar_lance(lance_da_lola)
         self.leilao.adicionar_lance(self.lance_do_gabriel)
