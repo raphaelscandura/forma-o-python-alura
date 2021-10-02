@@ -30,11 +30,12 @@ class Leilao:
         return self.__lances[:]
     
     def adicionar_lance(self, lance):
-        if(self.maior_lance < lance.valor):
-            self.maior_lance = lance.valor
-        if(self.menor_lance > lance.valor):
-            self.menor_lance = lance.valor
-        self.__lances.append(lance)
+        if not self.__lances or self.__lances[-1].usuario != lance.usuario:
+            if(self.maior_lance < lance.valor):
+                self.maior_lance = lance.valor
+            if(self.menor_lance > lance.valor):
+                self.menor_lance = lance.valor
+            self.__lances.append(lance)
 
     def imprimir_todos_os_lances(self):
         for lance in self.__lances:
