@@ -27,12 +27,9 @@ class TestLeilao(TestCase):
     def test_deve_permitir_um_usuario_dar_um_lance_caso_nao_seja_o_mesmo_usuario_do_lance_atual(self):
         segundo_lance_do_gabriel = Lance(self.gabriel, 110.0)
 
-        self.leilao.adicionar_lance(self.lance_do_gabriel)
-        self.leilao.adicionar_lance(segundo_lance_do_gabriel)
-
-        quantidade_de_lances = len(self.leilao.lances)
-
-        self.assertEqual(1, quantidade_de_lances)
+        with self.assertRaises(ValueError):
+            self.leilao.adicionar_lance(self.lance_do_gabriel)
+            self.leilao.adicionar_lance(segundo_lance_do_gabriel)
         
     def test_retorna_o_menor_e_o_maior_lance(self):
         self.leilao.adicionar_lance(self.lance_do_gabriel)
