@@ -1,3 +1,5 @@
+from excecoes import LanceInvalido
+
 class Usuario:
 
     def __init__(self, nome, carteira):
@@ -14,7 +16,7 @@ class Usuario:
 
     def da_lance(self, leilao, valor_lance):
         if(self._tem_dinheiro(valor_lance)):
-            raise ValueError(
+            raise LanceInvalido(
                 "O usuário não possui dinheiro suficiente na carteira para bancar um lance deste valor")
         else:
             lance_valido = Lance(self, valor_lance)
@@ -49,7 +51,7 @@ class Leilao:
             self.maior_lance = lance.valor
             self.__lances.append(lance)
         else:
-            raise ValueError("Erro: Lance inválido")
+            raise LanceInvalido("Erro: Lance inválido")
 
     def imprimir_todos_os_lances(self):
         for lance in self.__lances:
