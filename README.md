@@ -35,4 +35,4 @@ Teste automatizado refere-se à ideia de escrever um software que testa outro so
 - Gabriel Corte Real Saldanha
 
 # Meu progresso na formação
-Cursos iniciados!
+Formação completa, certificado disponível [aqui](https://cursos.alura.com.br/degree/certificate/e5a60a1f-f530-49d6-8510-79736c9b6353).
